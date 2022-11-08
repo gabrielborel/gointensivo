@@ -14,7 +14,7 @@ import (
 type CalculatePriceUseCaseTestSuite struct {
 	suite.Suite
 	OrderRepository database.OrderRepository
-	Db 							*sql.DB
+	Db              *sql.DB
 }
 
 func (suite *CalculatePriceUseCaseTestSuite) SetupSuite() {
@@ -42,9 +42,9 @@ func (suite *CalculatePriceUseCaseTestSuite) TestCalculateFinalPrice() {
 	order.CalculateFinalPrice()
 
 	calculateFinalPriceInput := OrderInputDTO{
-		ID: order.ID,
+		ID:    order.ID,
 		Price: order.Price,
-		Tax: order.Tax,
+		Tax:   order.Tax,
 	}
 
 	calculateFinalPriceUseCase := NewCalculateFinalPriceUseCase(suite.OrderRepository)

@@ -3,17 +3,17 @@ package entity
 import "errors"
 
 type Order struct {
-	ID 					string
-	Price 			float64
-	Tax 				float64
-	FinalPrice 	float64
+	ID         string
+	Price      float64
+	Tax        float64
+	FinalPrice float64
 }
 
 func NewOrder(id string, price float64, tax float64) (*Order, error) {
 	order := &Order{
-		ID: 		id,
-		Price: 	price,
-		Tax: 		tax,
+		ID:    id,
+		Price: price,
+		Tax:   tax,
 	}
 
 	err := order.IsValid()

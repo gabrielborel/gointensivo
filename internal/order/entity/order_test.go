@@ -26,9 +26,9 @@ func TestGivenAndEmptyTax_WhenCreateANewOrder_ThenShouldReceiveAnError(t *testin
 
 func TestGivenValidParams_WhenCreateANewOrder_ThenSouldReceiveACreatedOrderWithAllParams(t *testing.T) {
 	order := Order{
-		ID: "123", 
-		Price: 100.0, 
-		Tax: 1.2,
+		ID:    "123",
+		Price: 100.0,
+		Tax:   1.2,
 	}
 
 	assert.Equal(t, "123", order.ID)
@@ -53,6 +53,6 @@ func TestGivenAnPriceAndText_WhenCallCalculateFinalPrice_ThenShouldSetFinalPrice
 
 	err = order.CalculateFinalPrice()
 	assert.Nil(t, err)
-	
+
 	assert.Equal(t, 120.0, order.FinalPrice)
 }

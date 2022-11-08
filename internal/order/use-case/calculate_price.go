@@ -6,16 +6,16 @@ import (
 )
 
 type OrderInputDTO struct {
-	ID 		string
+	ID    string
 	Price float64
-	Tax 	float64
+	Tax   float64
 }
 
 type OrderOutputDTO struct {
-	ID 					string
-	Price 			float64
-	Tax 				float64
-	FinalPrice 	float64
+	ID         string
+	Price      float64
+	Tax        float64
+	FinalPrice float64
 }
 
 type CalculateFinalPriceUseCase struct {
@@ -45,9 +45,9 @@ func (c *CalculateFinalPriceUseCase) Execute(input OrderInputDTO) (*OrderOutputD
 	}
 
 	return &OrderOutputDTO{
-		ID: order.ID,
-		Price: order.Price,
-		Tax: order.Tax,
+		ID:         order.ID,
+		Price:      order.Price,
+		Tax:        order.Tax,
 		FinalPrice: order.FinalPrice,
 	}, nil
 }
